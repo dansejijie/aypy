@@ -1,7 +1,8 @@
 
 # coding=utf-8
+from __future__ import absolute_import
 
-from ..Core.Env import EMarketTargetType
+from ..AYCore.AYEnv import EMarketTargetType
 
 class Symbol(object):
 
@@ -10,6 +11,7 @@ class Symbol(object):
             self.market=market
             self.base=base
             self.target=target
+            self.base_quote='{}_{}'.format(target,base)
         else:
             raise TypeError('market type error')
     
