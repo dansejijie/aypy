@@ -34,6 +34,9 @@ class OKEXMarket(BaseMarket):
                 return pd
         else:
             return None
+    
+    def ticker(self):
+        pass
 
 
 if __name__ == '__main__':

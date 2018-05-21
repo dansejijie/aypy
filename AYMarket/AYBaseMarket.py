@@ -31,7 +31,7 @@ class BaseMarket(object):
     def ticker(self,symbol):
         """最新交易信息"""
         pass
-    def userinfo(self):
+    def userInfo(self):
         """用户账号信息"""
         pass
     def order(self,order_id,symbol):
