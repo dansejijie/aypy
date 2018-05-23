@@ -24,3 +24,42 @@
       1、错误信息提交，由系统来接受管理。
       2、K线添加上一个相同数据，并标记为假数据。
     4、
+
+
+
+1、支持针对订单的买入卖出
+2、支持针对仓位的买入卖出 
+3、支持订单撤销因子
+4、market 具有跟交易所交互功能，K线+ticker 深度，资金， 获取订单，下订单，取消订单等。
+具有 kl_pd,capital 等。
+
+## Utils
+提供 日志功能（mongodb(release)+console(debug)） logging
+
+## Market 市场
+具有 获取内部 CPairWork 功能（主要为了orders）
+具有 K、ticker、deepth、capital、order、cancelOrder 方法 参数由 CPairWork 提供
+
+## CPairWork 货币对管理
+具有 kl_pd,capital,deepth,orders,
+具有 buyFactor,sellFactor cancelFactor,其中sellFactor可以存在于buyFactor,cancelFactor存在于buyFactor和sellFactor,
+具有 K、ticker、deepth、capital、order、cancelOrder 方法，调用Market的网络请求方法
+
+## BuyFactor 
+具有 PositionFactor , SlippageFactor ,CancelFactor , SellFactor
+具有 
+
+## SellFactor
+具有 PositionFactor , SlippageFactor ,CancelFactor , SellFactor
+
+## PositionFactor
+具有 fit_position 方法，返回购买或出售数量
+
+## SlippageFactor
+具有 fit_price 方法，返回购买或出售价格
+
+## CancelFactor
+具有 fit_cancel 方法，返回是否取消单子的
+
+## Order
+具有 fit_buy_order,fit_sell_order,fit_cancel_order 功能，最终的order,cancelOrder 调用的是 CPairWork
