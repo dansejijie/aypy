@@ -37,6 +37,7 @@
 提供 日志功能（mongodb(release)+console(debug)） logging
 
 ## Market 市场
+具有 Market 信息
 具有 获取内部 CPairWork 功能（主要为了orders）
 具有 K、ticker、deepth、capital、order、cancelOrder 方法 参数由 CPairWork 提供
 
@@ -45,21 +46,29 @@
 具有 buyFactor,sellFactor cancelFactor,其中sellFactor可以存在于buyFactor,cancelFactor存在于buyFactor和sellFactor,
 具有 K、ticker、deepth、capital、order、cancelOrder 方法，调用Market的网络请求方法
 
-## BuyFactor 
-具有 PositionFactor , SlippageFactor ,CancelFactor , SellFactor
-具有 
+## CPair 货币对
 
-## SellFactor
-具有 PositionFactor , SlippageFactor ,CancelFactor , SellFactor
+## TradeFactor 
+具有 PositionFactor , SlippageFactor ,CancelFactor , TradeFactor
 
-## PositionFactor
-具有 fit_position 方法，返回购买或出售数量
+## PositionFactor 
+具有 fit_position(self,**kwargs) 方法，返回购买或出售数量
 
 ## SlippageFactor
-具有 fit_price 方法，返回购买或出售价格
+具有 fit_price(self,**kwargs) 方法，返回购买或出售价格
 
 ## CancelFactor
-具有 fit_cancel 方法，返回是否取消单子的
+具有 fit_cancel(self,**kwargs) 方法，返回是否取消单子的
 
 ## Order
+
+具有 Market 信息
+具有 CPair 信息
+订单是否可用 isValid fit_buy_order 会生成对应参数，有时会因仓位等原因无法生成
+具有状态信息 0：未提交订单 1：未生成订单 2：部分成交订单 3：全部成交订单 4：撤销中订单 5：已撤销订单
+具有 status,price,amount,deal_price,deal_amount 参数
 具有 fit_buy_order,fit_sell_order,fit_cancel_order 功能，最终的order,cancelOrder 调用的是 CPairWork
+
+fit_buy_order 用于构造买单，参数
+
+## 配置化，自动生成对象
