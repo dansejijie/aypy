@@ -72,3 +72,36 @@
 fit_buy_order 用于构造买单，参数
 
 ## 配置化，自动生成对象
+
+
+## NetWork
+  get(url, params=None, headers=None, retry=3, **kwargs):
+  post(url, params=None, headers=None, retry=3, **kwargs):
+  
+
+## WorkPickWorkControl
+  getMarket(self,work,market):
+  getCPair(self,work,market,cpair):
+  handleMessage(self,work,command)
+  fit()
+
+## TimePickWork
+  WorkControl
+  List Market
+
+  fun:
+  getMarket(self,market)
+  getCPair(self,market,cpair)
+  handleMessage(self,command)
+  fit()
+
+## MarketSimpleControl
+  NetWork
+
+  fun:
+  fit()
+  getMarket(self,market,market)
+  getCPair(self,market,cpair)
+
+
+## Market
