@@ -18,7 +18,7 @@
     ORDER_STATUS_CANCELED="canceled"
     ORDER_STATUS_CANCELING="canceling"
 
-## Order (Enum)
+## Order (Object)
     id
     timestamp
     price
@@ -28,6 +28,18 @@
     status,
     symbol,
     List TradeFactors
+
+
+## Ticker
+    hight
+    low
+    open
+    close
+    last
+
+## UserInfo
+    List xx:free:freezed
+
 
 ## NetWork
     get(url, params=None, headers=None, retry=3, **kwargs):
